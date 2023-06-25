@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-pv
+  labels:
+    name: pod-pv
+spec:
+  containers:
+    - name: pod-pv
+      image: nginx:latest
+      volumeMounts:
+        - mountPath: /k8s-alura
+          name: pod-pv
+  volumes:
+    - name: pod-pv
+      persistentVolumeClaim:
+        claimName: pvc-1
