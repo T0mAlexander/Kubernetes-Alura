@@ -167,3 +167,60 @@
   > **Nota:** certifique-se de estar no mesmo diretório onde o mapa de configuração se encontra 
 
   </details>
+
+- ### Listar ConfigMaps do cluster
+
+  ```bash
+  kubectl get configmap
+  ```
+  
+  > **Nota:** você também pode usar as iniciais `cm` para ver os ConfigMaps
+
+- ### Listar Deployments do cluster
+
+  ```bash
+  kubectl get deployment
+  ```
+
+  > **Nota:** você também pode usar a palavra`deploy` para ver os Deployments
+
+- ### Listar histórico de revisões de um recurso
+
+  ```bash
+  kubectl rollout history <tipo-de-recurso> <nome-do-arquivo>
+  ```
+
+- ### Gravar versão de um recurso
+
+  ```bash
+  kubectl apply -f <arquivo/do/recurso> --record
+  ```
+
+  > **Nota:** a flag `--record` não é mais recomendada pelo Kubernetes. Para se informar, veja esta [página](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) sobre Deployments
+
+- ### Criar uma anotação a um recurso
+
+  ```bash
+  kubectl annotate <tipo-de-recurso>
+  ```
+
+- ### Desfazer última alteração
+
+  ```bash
+
+  kubectl undo <tipo-de-recurso> <nome-do-arquivo> kubernetes.io/change-cause="Informações da modificação"
+  ```
+
+  > **Nota:** é necessário que tenha pelo menos uma alteração registrada
+
+- ### Listar extensões para o cluster single-node
+
+  ```bash
+  minikube addons list
+  ```
+
+- ### Habilitar uma extensão para o cluster single-node
+
+  ```bash
+  minikube addons enable <extensão>
+  ```
