@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: db-configmap
-data:
-  MYSQL_ROOT_PASSWORD: kubernetes
-  MYSQL_DATABASE: alura-k8s
-  MYSQL_PASSWORD: kubernetes
