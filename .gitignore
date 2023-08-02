@@ -1,0 +1,12 @@
+# Pastas
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+db_data/
+
+# Arquivos
+.env
+mysql

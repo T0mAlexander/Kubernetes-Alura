@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vollmed
+  labels:
+    app: vollmed
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vollmed
+  template:
+    metadata:
+      labels:
+        app: vollmed
+    spec:
+      containers:
+        - name: app-node-ts
+          image: t0malexander/k8s-helm-app:v2
+          ports:
+            - containerPort: 3000
+          # resources:
+          #   limits:
+          #     cpu: "1"
+          #     memory: "512Mi"
+          env:
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: dados
+                  key: REDIS_HOST
+
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: dados
+                  key: DB_HOST
+
+            - name: DB_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: dados
+                  key: DB_DATABASE
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: senhas
+                  key: DB_PASSWORD
+
+          livenessProbe:
+            httpGet:
+              port: 3000
+              path: /paciente
+            initialDelaySeconds: 230
+            periodSeconds: 3
