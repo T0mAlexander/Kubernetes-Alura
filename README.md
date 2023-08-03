@@ -82,6 +82,14 @@ Ramificação relacionada ao curso "Kubernetes: prática, Helm e cloud"
           </b>
         </sub>
       </td>
+      <td align="center">
+        <img src="https://skillicons.dev/icons?i=redis" width="65px"/>
+        <sub>
+          <b>
+            <h3>Redis</h3>
+          </b>
+        </sub>
+      </td>
     </tr>
   </table>
 </div>
