@@ -28,7 +28,7 @@ Ramificação relacionada ao curso "Kubernetes: prática, Helm e cloud"
         </sub>
       </td>
       <td align="center">
-        <img src="./src/assets/helm-icon.svg" width="65px"/>
+        <img src="./assets/helm-icon.svg" width="65px"/>
         <sub>
           <b>
             <h3>Helm</h3>
